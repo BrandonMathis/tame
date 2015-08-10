@@ -14,3 +14,6 @@ map <leader>t :NERDTreeToggle<cr>
 "SuperTab
 let g:SuperTabDefaultCompletionType = "<C-N>"
 set complete-=i
+
+" Some opinionated leader commands
+map <leader>w :w<cr>
