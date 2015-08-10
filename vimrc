@@ -10,3 +10,7 @@ map <leader>e :CtrlP<cr>
 
 "NERDTree
 map <leader>t :NERDTreeToggle<cr>
+
+"SuperTab
+let g:SuperTabDefaultCompletionType = "<C-N>"
+set complete-=i
