@@ -2,6 +2,8 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" Basic vim configs
+set number
 let mapleader = ";"
 
 "Ctrl P
