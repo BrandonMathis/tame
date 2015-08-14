@@ -5,6 +5,8 @@ filetype plugin indent on
 " Basic vim configs
 set number
 let mapleader = ";"
+set expandtab
+set tabstop=2
 
 "Ctrl P
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
