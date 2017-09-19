@@ -16,3 +16,4 @@ git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/ervandew/supertab.git
 
 curl https://raw.githubusercontent.com/BrandonMathis/tamevim/master/vimrc > ~/.vimrc
+curl https://raw.githubusercontent.com/BrandonMathis/tamevim/master/tmux.conf > ~/.tmux.conf
