@@ -7,7 +7,7 @@ apt-get update
 echo '$EDITOR=vim' > ~/.bashrc
 
 # Create User
-adduser --disabled-password --gecos $USER_NAME
+adduser --disabled-password --gecos "" $USER_NAME
 echo "$USER_NAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers
 
 # SSH
