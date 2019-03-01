@@ -11,7 +11,13 @@ adduser --disabled-password --gecos "" $USER_NAME
 echo "$USER_NAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers
 
 # SSH
-mkdir /home/$USER_NAME/.ssh
+SSH_DIR=/home/$USER_NAME/.ssh
+if [[ ! -e $SSH_DIR ]]; then
+  mkdir $SSH_DIR
+elif [[ ! -d $SSH_DIR ]]; then
+  echo "$SSH_DIR already exists... skipping"
+fi
+
 cat ~/.ssh/authorized_keys > /home/$USER_NAME/.ssh/authorized_keys
 chown -R $USER_NAME:$USER_NAME /home/$USER_NAME/.ssh
 
