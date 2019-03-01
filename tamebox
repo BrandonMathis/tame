@@ -5,7 +5,7 @@ SSH_DIR=/home/$USER_NAME/.ssh
 
 # Basic Setup
 apt-get update
-echo '$EDITOR=vim' > ~/.bashrc
+echo 'EDITOR=vim' > /etc/bash.bashrc
 
 # Create User
 adduser --disabled-password --gecos "" $USER_NAME
