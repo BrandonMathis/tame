@@ -25,5 +25,7 @@ fi
 
 
 # Disbale Root SSH
-echo "Clearing public key from $HOME/.ssh"
-echo '' > $HOME/.ssh/authorized_keys
+if [ "$SSH_DIR/authorized_keys" = "$HOME/.ssh/authorized_keys" ]; then
+  echo "Clearing public key from $HOME/.ssh"
+  echo '' > $HOME/.ssh/authorized_keys
+fi
