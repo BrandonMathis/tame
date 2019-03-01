@@ -7,6 +7,8 @@ set number
 let mapleader = ";"
 set expandtab
 set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 "Ctrl P
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
