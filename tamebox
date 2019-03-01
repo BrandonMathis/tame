@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 USER_NAME=ubuntu
+SSH_DIR=/home/$USER_NAME/.ssh
 
 # Basic Setup
 apt-get update
@@ -11,15 +12,18 @@ adduser --disabled-password --gecos "" $USER_NAME
 echo "$USER_NAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers
 
 # SSH
-SSH_DIR=/home/$USER_NAME/.ssh
 if [[ ! -e $SSH_DIR ]]; then
+  echo "creating $SSH_DIR"
   mkdir $SSH_DIR
+  echo "ensuring ownsership of $SSH_DIR"
+  chown -R $USER_NAME:$USER_NAME $SSH_DIR
+  echo "filling $SSH_DIR/authorized_keys with public key"
+  cat ~/.ssh/authorized_keys > $SSH_DIR/authorized_keys
 elif [[ ! -d $SSH_DIR ]]; then
   echo "$SSH_DIR already exists... skipping"
 fi
 
-cat ~/.ssh/authorized_keys > /home/$USER_NAME/.ssh/authorized_keys
-chown -R $USER_NAME:$USER_NAME /home/$USER_NAME/.ssh
 
 # Disbale Root SSH
-echo '' > ~/.ssh/authorized_keys
+echo "Clearing public key from $HOME/.ssh"
+echo '' > $HOME/.ssh/authorized_keys
